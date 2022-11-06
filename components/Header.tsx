@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Flex, Box } from '@chakra-ui/react'
+import { Container, Flex, Box } from '@chakra-ui/react'
 
 const NAV_ITEMS = {
   ABOUT: { name: 'About', href: '#about' },
@@ -9,7 +9,13 @@ const NAV_ITEMS = {
 
 export default function Header() {
   return (
-    <Flex as="header" alignItems="center" justifyContent="space-between" p={6}>
+    <Container
+      as="header"
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      p={6}
+    >
       <Box>Ting Chang</Box>
       <Flex>
         {Object.values(NAV_ITEMS).map(({ name, href }) => (
@@ -18,6 +24,6 @@ export default function Header() {
           </Link>
         ))}
       </Flex>
-    </Flex>
+    </Container>
   )
 }
